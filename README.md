@@ -53,6 +53,7 @@ MisTareas/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
 ## 🚀 Instalación rápida
 
