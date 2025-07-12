@@ -18,6 +18,7 @@ Los estilos estan realizados como ya he mencionado previamente en BootsTrap 5 ya
 
 ## 🏗️ Estructura
 
+```text
 MisTareas/
 ├── core/
 │   ├── __init__.py
@@ -47,14 +48,11 @@ MisTareas/
 │           └── task_confirm_delete.html
 ├── templates/               # plantillas globales (opcional)
 │   └── registration/
-│       ├── login.html
-│       └── register.html
+│       └── logout.html
 ├── manage.py
-├── db.sqlite3               # ignorado por .gitignore
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-
 
 ## 🚀 Instalación rápida
 
