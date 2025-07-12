@@ -113,9 +113,13 @@ Vista	Clase	URL	Descripción
 
 TareaListView - ListView - /tareas/ - Listado paginado
 TareaCreateView - CreateView - /tareas/nueva/ - Valida y crea
+
 TareaUpdateView - UpdateView - /tareas/editar/<pk>/ - Edita instancia
+
 TareaDeleteView - DeleteView - /tareas/eliminar/<pk>/ - Confirma y borra
+
 TareaDetailView - DetailView - /tareas/<pk>/ - Vista detalle
+
 
 Las requeridas heredan LoginRequiredMixin; los mensajes flash se gestionan con messages.success() y messages.error().
 
