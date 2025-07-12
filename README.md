@@ -19,11 +19,42 @@ Los estilos estan realizados como ya he mencionado previamente en BootsTrap 5 ya
 ## 🏗️ Estructura
 
 MisTareas/
-├── core/ # home, login, registro
-├── task/ # modelo Tarea, vistas y plantillas CRUD
-├── templates/ # registration/ + plantillas globales
+├── core/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── urls.py
+│   ├── views.py
+│   └── templates/
+│       └── registration/
+│           ├── login.html
+│           └── register.html
+├── task/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   └── templates/
+│       └── task/
+│           ├── base.html
+│           ├── task_list.html
+│           ├── task_form.html
+│           ├── task_detail.html
+│           └── task_confirm_delete.html
+├── templates/               # plantillas globales (opcional)
+│   └── registration/
+│       ├── login.html
+│       └── register.html
 ├── manage.py
+├── db.sqlite3               # ignorado por .gitignore
+├── requirements.txt
+├── .gitignore
 └── README.md
+
 
 ## 🚀 Instalación rápida
 
