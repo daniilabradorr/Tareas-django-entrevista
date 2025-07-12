@@ -1,0 +1,16 @@
+{% extends 'task/base.html' %}  <!-- Extiendo base.html que ya incluye la barra de navegación y los estilos de Bootstrap -->
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+  <!-- mb-4: aplico margen inferior para separar el título del resto del contenido -->
+  <h1 class="mb-4">¡Bienvenido a Mis Tareas!</h1>
+  {% if user.is_authenticated %}
+    <!-- btn-link: uso un enlace con apariencia de botón ligero para acciones secundarias -->
+    <p>Hola, {{ user.username }}. <a class="btn btn-link p-0" href="{% url 'task:task_list' %}">Ver mis tareas</a>.</p>
+    <p><a class="btn btn-link p-0" href="{% url 'core:logout' %}">Cerrar sesión</a></p>
+  {% else %}
+    <!-- btn-primary: resalto el enlace de login para guiar al usuario -->
+    <p>No has iniciado sesión. <a class="btn btn-primary" href="{% url 'core:login' %}">Entrar</a>.</p>
+  {% endif %}
+{% endblock %}

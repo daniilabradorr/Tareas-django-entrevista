@@ -1,0 +1,50 @@
+{% extends 'task/base.html' %}
+
+{% block title %}Iniciar sesión{% endblock %}
+
+{% block content %}
+  <!-- mb-4: margen inferior para separar el título del formulario -->
+  <h1 class="mb-4">Iniciar sesión</h1>
+
+  <form method="post" novalidate>
+    {% csrf_token %}  <!-- Protejo contra CSRF -->
+
+    {# Muestro un mensaje genérico si el formulario falla validación #}
+    {% if form.errors %}
+      <div class="alert alert-danger" role="alert">
+        Usuario o contraseña inválidos. Por favor, inténtalo de nuevo.
+      </div>
+    {% endif %}
+
+    <!-- mb-3: separación entre campos -->
+    <div class="mb-3">
+      <!-- form-label: estilo de etiqueta integrado en Bootstrap -->
+      <label for="id_username" class="form-label">Usuario</label>
+      <!-- form-control: inputs responsivos con padding y bordes definidos -->
+      <input 
+        type="text" 
+        name="username" 
+        id="id_username" 
+        class="form-control" 
+        placeholder="Introduce tu usuario" 
+        required 
+        autofocus
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="id_password" class="form-label">Contraseña</label>
+      <input 
+        type="password" 
+        name="password"
+        id="id_password" 
+        class="form-control" 
+        placeholder="••••••••" 
+        required
+      >
+    </div>
+
+    <button type="submit" class="btn btn-primary">Entrar</button>
+    <a class="btn btn-link ms-3 p-0" href="{% url 'core:home' %}">Cancelar</a>
+  </form>
+{% endblock %}

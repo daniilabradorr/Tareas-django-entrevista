@@ -1,0 +1,14 @@
+{% extends 'task/base.html' %}
+{% block title %}{% if object %}Editar{% else %}Nueva{% endif %} Tarea{% endblock %}
+{% block content %}
+  <!-- mb-3: separo el encabezado del formulario -->
+  <h1 class="mb-3">{% if object %}Editar{% else %}Nueva{% endif %} Tarea</h1>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- form-control ya aplicado en widgets para inputs y textareas -->
+    <!-- btn-success: uso color verde para la acción de guardar -->
+    <button class="btn btn-success" type="submit">Guardar</button>
+    <!-- ms-2: margen izquierda para separar el botón de cancelar -->
+    <a class="btn btn-secondary ms-2" href="{% url 'task:task_list' %}">Cancelar</a>
+  </form>
+{% endblock %}

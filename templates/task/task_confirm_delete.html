@@ -1,0 +1,14 @@
+{% extends 'task/base.html' %}
+{% block title %}Eliminar Tarea{% endblock %}
+{% block content %}
+  <!-- mb-3: espacio antes del mensaje de confirmación -->
+  <h1 class="mb-3">Confirmar eliminación</h1>
+  <p>¿Seguro que deseas eliminar la tarea "{{ object }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <!-- btn-danger: color rojo para indicar acción destructiva -->
+    <button class="btn btn-danger" type="submit">Sí, eliminar</button>
+    <!-- ms-2: margen para separar del cancel -->
+    <a class="btn btn-secondary ms-2" href="{% url 'task:task_list' %}">Cancelar</a>
+  </form>
+{% endblock %}

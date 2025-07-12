@@ -1,0 +1,14 @@
+{% extends 'task/base.html' %}
+{% block title %}Detalle de Tarea{% endblock %}
+{% block content %}
+  <!-- mb-3: margen inferior para destacar el encabezado -->
+  <h1 class="mb-3">{{ tarea.title }}</h1>
+  <p>{{ tarea.description }}</p>
+  <!-- text-muted: disminuyo la prominencia del texto secundario -->
+  <p class="text-muted">Creada: {{ tarea.created_at|date:"d/m/Y H:i" }}</p>
+  <!-- btn-outline-* y me-1 para botones de acción ligera y separación -->
+  <a class="btn btn-outline-secondary me-1" href="{% url 'task:task_update' tarea.pk %}">Editar</a>
+  <a class="btn btn-outline-danger me-1" href="{% url 'task:task_delete' tarea.pk %}">Eliminar</a>
+  <!-- btn-link: enlace menos invasivo para volver al listado -->
+  <a class="btn btn-link p-0" href="{% url 'task:task_list' %}">Volver al listado</a>
+{% endblock %}
