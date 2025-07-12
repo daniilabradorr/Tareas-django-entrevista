@@ -65,8 +65,8 @@ cd Tareas-django-entrevista
 # Crear y activar entorno virtual
 python -m venv venv
 
-# Linux/macOS: source venv/bin/activate
-# Windows PowerShell:
+# Linux/macOS && Windows PowerShell:
+source venv/bin/activate
 (Dependiendo que sistema operativo tengan ustedes)
 .\venv\Scripts\Activate.ps1
 
@@ -78,7 +78,9 @@ pip install django>=5.0,<6 bootstrap5
 
 # Migraciones y superusuario
 python manage.py makemigrations
+
 python manage.py migrate
+
 python manage.py createsuperuser
 
 # Ejecutar servidor
